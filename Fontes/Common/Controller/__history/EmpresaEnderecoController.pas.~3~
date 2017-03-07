@@ -1,0 +1,27 @@
+unit EmpresaController;
+
+interface
+
+uses
+  System.Generics.Collections,
+  //
+  Aurelius.Engine.ObjectManager, Aurelius.Criteria.Base, Aurelius.Criteria.Expression, Aurelius.Criteria.Linq, Aurelius.Criteria.Projections,
+  //
+  Empresa;
+
+type
+  TEmpresaController = class
+  private
+    class var FManager: TObjectManager;
+  public
+    class procedure Save(AEmpresa: TEmpresa);
+    class function Update(AEmpresa: TEmpresa): Boolean;
+    class function Delete(AEmpresa: TEmpresa): Boolean;
+    class function FindObject(ACriteria: TCriteria): TEmpresa;
+    class function FindObjectList(ACriteria: TCriteria): TObjectList<TEmpresa>;
+  end;
+
+implementation
+
+end.
+

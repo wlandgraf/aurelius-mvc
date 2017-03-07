@@ -1,0 +1,13 @@
+unit ContadorController;
+
+interface
+
+type
+  TContadorController = class
+  private
+  public
+  end;
+
+implementation
+
+end.

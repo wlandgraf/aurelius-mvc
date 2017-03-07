@@ -1,0 +1,51 @@
+unit Empresa;
+
+interface
+
+uses
+  System.Classes, System.Generics.Collections,
+  //
+  Aurelius.Mapping.Attributes, Aurelius.Types.Blob, Aurelius.Types.Nullable, Aurelius.Types.Proxy,
+  //
+  Contador, EmpresaEndereco;
+
+type
+  [Entity]
+  [Table('EMPRESA')]
+  [Id('Id', TIdGenerator.IdentityOrSequence)]
+  TEmpresa = class
+  private
+    FID: Integer;
+    FID_CONTADOR: Integer;
+    FRAZAO_SOCIAL: string;
+    FFANTASIA: string;
+    FCNPJ: string;
+
+    FContador: TContador;
+    FEnderecoLista: TObjectList<EmpresaEndereco>;
+  public
+    [Column('ID', [], 100)]
+    property Id: Integer read FID write FID;
+    [Column('ID_CONTADOR', [], 100)]
+    property IdContador: Integer read FID_CONTADOR write FID_CONTADOR;
+    [Column('RAZAO_SOCIAL', [], 100)]
+    property RazaoSocial: string read FFANTASIA write FFANTASIA;
+    [Column('FANTASIA', [], 100)]
+    property Fantasia: string read FID write FID;
+    [Column('CNPJ', [], 100)]
+    property Cnpj: string read FCNPJ write FCNPJ;
+
+    [Association([])]
+    [JoinColumn('ID_CONTADOR', [], '')]
+    property Contador: TContador read FContador write FContador;
+    [ManyValuedAssociation([TAssociationProp.Required], [TCascadeTypeAll])]
+    [ForeignJoinColumn()]
+    property EnderecoLista: TObjectList<TEmpresaEndereco> read FEnderecoLista write FEnderecoLista;
+  end;
+
+implementation
+
+initialization
+  RegisterEntity(TEmpresa);
+
+end.

@@ -1,0 +1,27 @@
+unit ContadorController;
+
+interface
+
+uses
+  System.Generics.Collections,
+  //
+  Aurelius.Engine.ObjectManager, Aurelius.Criteria.Base, Aurelius.Criteria.Expression, Aurelius.Criteria.Linq, Aurelius.Criteria.Projections,
+  //
+  Contador;
+
+type
+  TContadorController = class
+  private
+    class var FManager: TObjectManager;
+  public
+    class procedure Save(AContador: TContador);
+    class function Update(AContador: TContador): Boolean;
+    class function Delete(AContador: TContador): Boolean;
+    class function FindObject(ACriteria: TCriteria): TContador;
+    class function FindObjectList(ACriteria: TCriteria): TObjectList<TContador>;
+  end;
+
+implementation
+
+end.
+

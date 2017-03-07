@@ -1,0 +1,16 @@
+program AureliusMVC;
+
+uses
+  Vcl.Forms,
+  UMenu in 'UMenu.pas' {FMenu},
+  Empresa in '..\Common\Entity\Empresa.pas',
+  Socio in '..\Common\Entity\Socio.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFMenu, FMenu);
+  Application.Run;
+end.

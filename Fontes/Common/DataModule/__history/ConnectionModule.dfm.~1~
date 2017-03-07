@@ -1,0 +1,9 @@
+object FireDacFirebirdConnection: TFireDacFirebirdConnection
+  OldCreateOrder = True
+  Height = 198
+  Width = 282
+  object Connection: TFDConnection
+    Left = 16
+    Top = 8
+  end
+end

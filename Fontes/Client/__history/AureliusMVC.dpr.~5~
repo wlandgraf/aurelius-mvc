@@ -1,0 +1,15 @@
+program AureliusMVC;
+
+uses
+  Vcl.Forms,
+  Empresa in '..\Common\Entity\Empresa.pas',
+  Socio in '..\Common\Entity\Socio.pas',
+  EmpresaEndereco in '..\Common\Entity\EmpresaEndereco.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.Run;
+end.

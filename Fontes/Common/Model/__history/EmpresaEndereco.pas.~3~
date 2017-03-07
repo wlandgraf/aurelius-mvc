@@ -1,0 +1,24 @@
+unit EmpresaEndereco;
+
+interface
+
+type
+  [Entity]
+  [Table('EMPRESA_ENDERECO')]
+  TEmpresaEnderecoVO = class
+  private
+    FID: Integer;
+    FID_EMPRESA: Integer;
+    FLOGRADOURO: String;
+    FNUMERO: String;
+    FCOMPLEMENTO: String;
+    FBAIRRO: String;
+    FCIDADE: String;
+    FCEP: String;
+  public
+
+  end;
+
+implementation
+
+end.
